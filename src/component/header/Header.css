@@ -12,6 +12,7 @@
 
 }
 
+//because link yha anchor tag ka kam kar rha hai isiliye iska matbl hai ki link wale anchor span hai 
 a > span{
     margin: 0 30px;
     font-size: 1.3rem;
