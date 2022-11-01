@@ -31,19 +31,26 @@ const Home = () => {
                 >
                     {
                         popularMovies.map(movie => (
+   //hamne yha link pure carousel pr lagaya hai ki jab bhi koi kisi movie pr click kare to vo use uska main page par pahucha dega  matlab vo use movie.id ke path se link kar dega
                             <Link style={{textDecoration:"none",color:"white"}} to={`/movie/${movie.id}`} >
 
                                 <div className="posterImage">
+  //ye img me src me hamse pura path chahiye to hamne pehle TMDB ka path diya jisse ye uska poster show karega or uske bad Movie, and hamne uski API ki backdrop_path ko yha put kar diya
                                     <img src={`https://image.tmdb.org/t/p/original${movie && movie.backdrop_path}`} />
                                 </div>
 
                                 <div className="posterImage__overlay">
+//                 //yha ye posterImage_title me => Agar movie show ho rahi hai to ye uska original title show karega otherwise null                 
                                     <div className="posterImage__title">{movie ? movie.original_title: ""}</div>
                                     
+ //yha ye posterImage_runtim me => Agar movie show ho rahi hai to ye uska release_date show karega otherwise null                 
+
                                     <div className="posterImage__runtime">
                                         {movie ? movie.release_date : ""}
+
                                         <span className="posterImage__rating">
                                             {movie ? movie.vote_average :""}
+//ham yha ise put karne ke liye font awesome font link ko Index.js me import kiya hai
                                             <i className="fas fa-star" />{" "}
                                         </span>
                                     </div>
@@ -53,7 +60,9 @@ const Home = () => {
                         ))
                     }
                 </Carousel>
+
                 <MovieList />
+                    
             </div>
         </>
     )
