@@ -16,9 +16,9 @@ function App() {
 
       <Routes>
         <Route index element={<Home />}></Route>
-
+//agar yha koi bhi MOVIE KE BAD ID ka path dega to movie wale ko show karega 
         <Route path="movie/:id" element={<Movie />}></Route>
-
+//agar yha koi bhi MOVIE KE BAD type ka path dega to movie wale ko show karega 
         <Route path="movies/:type" element={<MovieList />}></Route>
         
         <Route path="/*" element={<h1>Error Page</h1>}></Route>
